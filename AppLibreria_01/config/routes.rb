@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+    
   
   get 'users/index'
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :customers
 
   resources :employees
-
+#para hacer la busqueda del libro
   resources :books do
     collection do
       post :findR
