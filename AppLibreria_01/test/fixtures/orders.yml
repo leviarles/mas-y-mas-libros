@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechapedido: 2014-06-25
+  enproceso: false
+  cumplida: false
+  entregado: false
+  cancelado: false
+  employee_id: 
+  customer_id: 
+
+two:
+  fechapedido: 2014-06-25
+  enproceso: false
+  cumplida: false
+  entregado: false
+  cancelado: false
+  employee_id: 
+  customer_id: 

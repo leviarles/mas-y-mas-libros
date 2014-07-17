@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipopromocion: MyString
+  medio: MyString
+  descripcion: MyString
+  employee_id: 
+  customer_id: 
+
+two:
+  tipopromocion: MyString
+  medio: MyString
+  descripcion: MyString
+  employee_id: 
+  customer_id: 

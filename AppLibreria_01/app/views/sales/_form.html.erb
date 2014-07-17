@@ -1,0 +1,84 @@
+<%= form_for(@sale) do |f| %>
+  <% if @sale.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+
+      <ul>
+      <% @sale.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<br><br>
+<div id="detallesVentaContainer">
+    <di id="agregarProductoContainer">
+       <span>
+        ISBN del libro: <input type="text" name="clavelibro" id="clavelibro" placeholder="Clave del libro"/>        
+      </span>
+      <span>
+        Cantidad de ejemplares: <input type="number" name="cantidadlibro" id="cantidadlibro" placeholder="Cantidad" value="1">
+      </span>
+       <p>% de descuento por libro
+        <input type="number" name="descuentolibro" id="descuentolibro" value="0" onkeypress="validaNumeros()" min="0" max="20" maxlength="2" >
+      </p> 
+
+    </div><br><br>
+
+<table id="detallesVentaTable" cellspacing="0">
+    <thead>
+      <th>Clave</th>
+      
+      <th>Cantidad</th>
+
+      <th>Precio</th>
+      <th>Total</th>
+      <th>Descuento total</th>
+     
+    </thead>
+    <tbody>      
+      <% @sale.detailsales.each do |item| %>
+        <%= f.fields_for :detailsales, item do |d| %>
+          <tr>
+            <td><%= d.text_field :book_id, :class =>"idLibroVender" %></td>
+            <td><input type="text" id="nombreProducto" value="" readonly="readonly"></td>
+            <td><%= d.number_field :cantidad, :id =>"cantidad" , :class=> "cantidad"%></td>
+            <td><input type="number" name="preciolibro" id="preciolibro" placeholder="precio"></td>
+             <td><input type="number" name="txl" id="txl" placeholder="total"></td><br>
+              <td><input type="number" name="desuentoporlibro" id="descuentoporlibro" placeholder="descuento x libro"></td><br>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+    
+  </table><br><strong>_____________________________________________________</strong>
+  <H3>DATOS FINALES</H3><br>
+  <br>Costo acumulado sin descuento<br><input type="text" id="total" value="Total sin desc." ><br>
+
+
+  <div class="field">
+    <%= f.label :fechatransaccion %>
+    <%= f.date_select :fechatransaccion %>
+  </div>
+  <div class="field">
+    <%= f.label :total%>
+    <%= f.text_field :total, :id=>"totalapagar" %>
+  </div>
+  <div class="field">
+    <%= f.label :descuento %>
+    <%= f.text_field :descuento, :id => "descuentoregistrar" %>
+  </div>
+  <div class="field">
+    <%= f.label :employee_id %>
+    <%= f.text_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %>
+    <%= f.text_field :customer_id %>
+  </div>
+  <div class="actions">
+    <button name="guardarVenta" id="guardarVenta" type="button" class="btn btn-danger" >Realizar venta</button>
+  </div>
+ <% end %>
+

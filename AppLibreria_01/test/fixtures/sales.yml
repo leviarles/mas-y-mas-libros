@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fechatransaccion: 2014-06-25
+  total: 1.5
+  descuento: 1.5
+  employee_id: 
+  customer_id: 
+
+two:
+  fechatransaccion: 2014-06-25
+  total: 1.5
+  descuento: 1.5
+  employee_id: 
+  customer_id: 

@@ -1,0 +1,27 @@
+<h1>Listing detailsales</h1>
+
+<table border="1" cellpadding="7" cellspacing="0" bordercolor="#2C1414">
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th>Cantidad</th>
+      <th>Sale</th>
+      <th colspan="1">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detailsales.each do |detailsale| %>
+      <tr>
+        <td><%= detailsale.book.nombrelibro %></td>
+        <td><%= detailsale.cantidad %></td>
+        <td><%= detailsale.sale.id %></td>
+        <td><%= link_to 'Mostrar', detailsale %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detailsale', new_detailsale_path %>
