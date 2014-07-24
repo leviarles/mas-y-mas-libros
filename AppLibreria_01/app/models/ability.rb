@@ -15,13 +15,16 @@ class Ability
      if user.role == "manager"
      can :manage, :all
      elsif user.role == "seller"
-      alias_action :create, :read, :update, :to => :cru
+      alias_action :create, :read, :show, :update, :to => :cru
       can :cru, Sale
       can :cru, Book
+      can :cru, Category
       can :cru, Detailsale
-      can :cru, Customer
+      can :cru , Customer
+      
+     
     
-        
+       
                end
     
     #

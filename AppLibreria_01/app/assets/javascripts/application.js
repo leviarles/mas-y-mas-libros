@@ -12,9 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require turbolinks
+ //= require jquery.turbolinks
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/2/jquery.dataTables.bootstrap
+//= require twitter/bootstrap
 //= require_tree .
+
+
 $(document).ready(function(){  
     $('#clavelibro').on("change",function() {
     //pasar a cantidad

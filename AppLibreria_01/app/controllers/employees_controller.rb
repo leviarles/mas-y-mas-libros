@@ -21,7 +21,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
-     @employee.user = User.new
+  
   end
 
   # POST /employees
@@ -52,6 +52,7 @@ class EmployeesController < ApplicationController
   # PATCH/PUT /employees/1
   # PATCH/PUT /employees/1.json
   def update
+
     respond_to do |format|
       if @employee.update(employee_params)
         format.html { redirect_to @employee, notice: 'Employee was successfully updated.' }
@@ -81,7 +82,7 @@ class EmployeesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
-      params.require(:employee).permit(:nombre, :rfc, :direccion, :cargo, :telefono, :user_id)
+      params.require(:employee).permit(:nombre, :rfc, :direccion, :cargo, :telefono, :user_id, :user => [:employee_id , :name , :email, :passwor, :password_confirmation])
     end
 
 

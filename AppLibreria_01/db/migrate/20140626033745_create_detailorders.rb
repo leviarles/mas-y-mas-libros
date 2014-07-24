@@ -3,7 +3,7 @@ class CreateDetailorders < ActiveRecord::Migration
     create_table :detailorders do |t|
       t.references :book, index: true
       t.integer :cantidad
-      t.references :sale, index: true
+      
 
       t.timestamps
     end

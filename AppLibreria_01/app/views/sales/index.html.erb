@@ -19,11 +19,11 @@
         <td><%= sale.total %></td>
         <td><%= sale.descuento %></td>
          <% if !sale.employee.nil? %>
-        <td><%= sale.employee%></td>
+        <td><%= sale.employee.nombre%></td>
          <% else %>
           <td><p>Sin usuario</p></td>
         <% end %>
-        <td><%= sale.customer %></td>
+        <td><%= sale.customer.nombre %></td>
         <td><%= link_to 'Ver', sale %></td>
       
       </tr>

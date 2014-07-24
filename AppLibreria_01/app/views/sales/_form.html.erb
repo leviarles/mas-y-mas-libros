@@ -70,9 +70,12 @@
     <%= f.text_field :descuento, :id => "descuentoregistrar" %>
   </div>
   <div class="field">
-    <%= f.label :employee_id %>
-    <%= f.text_field :employee_id %>
+    <%= f.label :employee_id , "Empleado"%>
+
+    <%= f.hidden_field :employee_id, :value => current_user.employee_id %>
+
   </div>
+   <%= current_user.employee.nombre %>
   <div class="field">
     <%= f.label :customer_id %>
     <%= f.text_field :customer_id %>

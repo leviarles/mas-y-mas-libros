@@ -1,4 +1,5 @@
 class Detailorder < ActiveRecord::Base
   belongs_to :book
-  belongs_to :sale
+  belongs_to :order
+  
 end

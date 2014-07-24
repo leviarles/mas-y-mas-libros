@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-
+<p>Id de usuario: <%= @employee.user_id %> </p>
+    <%= f.hidden_field :user_id %>
 
   <div class="field">
     <%= f.label :nombre %><br>
@@ -43,7 +43,6 @@
   <legend>Datos del usuario</legend>
  
 
-    <%= f.hidden_field :user_id %>
 
     <%= fields_for @employee.user do |c| %>
 
@@ -63,10 +62,7 @@
 </div>
 
 
-
-
-
-  <div class="actions">
+  <div class="actions"> 
    <%= f.submit %>
   </div>
 <% end %>

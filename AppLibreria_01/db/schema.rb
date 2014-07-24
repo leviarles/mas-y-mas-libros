@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140704044656) do
+ActiveRecord::Schema.define(version: 20140718175002) do
 
   create_table "books", force: true do |t|
     t.string   "isbn"
@@ -47,13 +47,13 @@ ActiveRecord::Schema.define(version: 20140704044656) do
   create_table "detailorders", force: true do |t|
     t.integer  "book_id"
     t.integer  "cantidad"
-    t.integer  "sale_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "order_id"
   end
 
   add_index "detailorders", ["book_id"], name: "index_detailorders_on_book_id"
-  add_index "detailorders", ["sale_id"], name: "index_detailorders_on_sale_id"
+  add_index "detailorders", ["order_id"], name: "index_detailorders_on_order_id"
 
   create_table "detailsales", force: true do |t|
     t.integer  "book_id"
@@ -140,10 +140,12 @@ ActiveRecord::Schema.define(version: 20140704044656) do
     t.integer  "customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "sales", ["customer_id"], name: "index_sales_on_customer_id"
   add_index "sales", ["employee_id"], name: "index_sales_on_employee_id"
+  add_index "sales", ["user_id"], name: "index_sales_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",       null: false
