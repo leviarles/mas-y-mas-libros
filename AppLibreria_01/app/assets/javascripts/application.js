@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require_tree .
+ //= require_tree .
 $(document).ready(function(){  
     $('#clavelibro').on("change",function() {
     //pasar a cantidad
